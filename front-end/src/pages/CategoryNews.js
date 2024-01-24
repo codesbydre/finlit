@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import NewsArticle from "../components/NewsArticle";
+import Search from "../components/Search";
 
 function CategoryNews() {
   const { category } = useParams();
@@ -24,6 +25,7 @@ function CategoryNews() {
   return (
     <div>
       <h1>{category.charAt(0).toUpperCase() + category.slice(1)} News</h1>
+      <Search />
       <div className="row">
         {articles.length > 0 ? (
           articles.map((article, index) => (
