@@ -4,34 +4,32 @@ import TopHeadlines from "../components/TopHeadlines";
 
 function HomePage() {
   const username = localStorage.getItem("username");
-  const isAuthenticated = !!username; // Check if the user is authenticated
+  const isAuthenticated = !!username;
 
   return (
     <div>
-      {" "}
-      <div className="container my-4">
-        <h1>
+      <div className="p-5 mb-5 bg-light rounded-3 text-center">
+        <h1 className="display-4">
           Welcome to FinLit
           {isAuthenticated ? `, ${username}!` : "!"}
         </h1>
-
-        <p>
+        <p className="lead">
           Explore current news, take quizzes, and improve your financial
           knowledge!
         </p>
-
-        {/* Display links to Login and Register if the user is not authenticated */}
         {!isAuthenticated && (
-          <div>
-            <p>
-              <Link to="/login">Login</Link> or{" "}
-              <Link to="/register">Register</Link> to learn more.
-            </p>
-          </div>
+          <p>
+            <Link to="/login" className="btn btn-primary btn-lg mr-2">
+              Login
+            </Link>
+            &nbsp;
+            <Link to="/register" className="btn btn-secondary btn-lg">
+              Register
+            </Link>
+          </p>
         )}
-
-        <TopHeadlines category="business" />
       </div>
+      <TopHeadlines category="business" />
     </div>
   );
 }

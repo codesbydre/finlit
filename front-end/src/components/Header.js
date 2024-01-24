@@ -13,7 +13,7 @@ function Header() {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             FinLit
