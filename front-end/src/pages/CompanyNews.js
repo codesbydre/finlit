@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import NewsArticle from "../components/NewsArticle";
 import Search from "../components/Search";
+import CategoriesList from "../components/CategoriesList";
+import CompaniesList from "../components/CompaniesList";
 
 function CompanyNews() {
   const { companyName } = useParams();
@@ -23,18 +25,28 @@ function CompanyNews() {
 
   return (
     <div>
-      <h1>{companyName} News</h1>
-      <Search />
-      <div className="row">
-        {articles.length > 0 ? (
-          articles.map((article, index) => (
-            <NewsArticle key={index} article={article} />
-          ))
-        ) : error ? (
-          <div>{error}</div>
-        ) : (
-          <div>Loading news articles for {companyName}...</div>
-        )}
+      <div className="container-lg mt-4">
+        <Search />
+        <div className="row">
+          <div className="col-md-2">
+            <CategoriesList />
+            <CompaniesList />
+          </div>
+          <div className="col-md-10 my-4">
+            <h4>{companyName} News</h4>
+            <div className="row">
+              {articles.length > 0 ? (
+                articles.map((article, index) => (
+                  <NewsArticle key={index} article={article} />
+                ))
+              ) : error ? (
+                <div>{error}</div>
+              ) : (
+                <div>Loading news articles for {companyName}...</div>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
