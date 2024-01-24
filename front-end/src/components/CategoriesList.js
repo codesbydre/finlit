@@ -18,7 +18,7 @@ const CategoriesList = () => {
   };
 
   return (
-    <div className="list-group">
+    <div className="list-group my-4">
       <h2>Category</h2>
       {categories.map((category) => (
         <button

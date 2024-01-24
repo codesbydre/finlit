@@ -5,7 +5,7 @@ import TopHeadlines from "../components/TopHeadlines";
 
 function NewsPage() {
   return (
-    <div className="container mt-4">
+    <div className="container-lg mt-4">
       <h1>News</h1>
       <Search />
       <div className="row">

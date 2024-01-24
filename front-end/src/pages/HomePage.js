@@ -8,7 +8,7 @@ function HomePage() {
   const isAuthenticated = !!username;
 
   return (
-    <div className="container mt-4">
+    <div className="container-lg mt-4">
       <div className="p-5 mb-4 bg-light rounded-3 text-center">
         <h1 className="display-4">
           Welcome to FinLit
