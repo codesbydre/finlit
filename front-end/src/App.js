@@ -9,6 +9,7 @@ import QuizList from "./components/QuizList";
 import QuizPage from "./pages/QuizPage";
 import QuizResults from "./pages/QuizResults";
 import CategoryNews from "./pages/CategoryNews";
+import CompanyNews from "./pages/CompanyNews";
 
 import "./App.css";
 
@@ -30,6 +31,10 @@ function App() {
               element={<QuizResults />}
             />{" "}
             <Route path="/news/:category" element={<CategoryNews />} />
+            <Route
+              path="/company-news/:companyName"
+              element={<CompanyNews />}
+            />
           </Routes>
         </main>
       </div>

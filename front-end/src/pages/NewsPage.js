@@ -1,5 +1,6 @@
 import React from "react";
 import CategoriesList from "../components/CategoriesList";
+import CompaniesList from "../components/CompaniesList";
 import Search from "../components/Search";
 import TopHeadlines from "../components/TopHeadlines";
 
@@ -11,6 +12,7 @@ function NewsPage() {
       <div className="row">
         <div className="col-md-2">
           <CategoriesList />
+          <CompaniesList />
         </div>
         <div className="col-md-10">
           <TopHeadlines category="business" />
