@@ -5,11 +5,17 @@ import TopHeadlines from "../components/TopHeadlines";
 
 function NewsPage() {
   return (
-    <div>
+    <div className="container mt-4">
       <h1>News</h1>
       <Search />
-      <CategoriesList />
-      <TopHeadlines />
+      <div className="row">
+        <div className="col-md-2">
+          <CategoriesList />
+        </div>
+        <div className="col-md-10">
+          <TopHeadlines category="business" />
+        </div>
+      </div>
     </div>
   );
 }

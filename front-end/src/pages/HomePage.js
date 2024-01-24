@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TopHeadlines from "../components/TopHeadlines";
+import CategoriesList from "../components/CategoriesList";
 
 function HomePage() {
   const username = localStorage.getItem("username");
   const isAuthenticated = !!username;
 
   return (
-    <div>
-      <div className="p-5 mb-5 bg-light rounded-3 text-center">
+    <div className="container mt-4">
+      <div className="p-5 mb-4 bg-light rounded-3 text-center">
         <h1 className="display-4">
           Welcome to FinLit
           {isAuthenticated ? `, ${username}!` : "!"}
@@ -29,7 +30,14 @@ function HomePage() {
           </p>
         )}
       </div>
-      <TopHeadlines category="business" />
+      <div className="row">
+        <div className="col-md-2">
+          <CategoriesList />
+        </div>
+        <div className="col-md-10">
+          <TopHeadlines category="business" />
+        </div>
+      </div>
     </div>
   );
 }
