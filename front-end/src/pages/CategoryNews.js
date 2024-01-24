@@ -11,7 +11,10 @@ function CategoryNews() {
   useEffect(() => {
     axios
       .get(`/api/news/category/${category}`)
-      .then((response) => setArticles(response.data.articles))
+      .then((response) => {
+        console.log("API Response:", response.data);
+        setArticles(response.data);
+      })
       .catch((error) => {
         console.error(`Error fetching news for category: ${category}`, error);
         setError(`Failed to load news articles for category: ${category}`);
