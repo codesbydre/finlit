@@ -20,18 +20,26 @@ function Search() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSearch}>
+    <div className="input-group mb-3">
+      <form
+        onSubmit={handleSearch}
+        className="form-outline flex-grow-1 d-flex pb-3"
+      >
         <input
-          type="text"
+          type="search"
+          id="form1"
+          className="form-control w-50"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search for news articles"
+          placeholder="Search for news articles by topic or company..."
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="btn btn-primary">
+          <i className="fas fa-search"></i>
+        </button>
       </form>
+      <br />
 
-      {error && <div>{error}</div>}
+      {error && <div className="alert alert-danger">{error}</div>}
       <div className="row">
         {articles.map((article, index) => (
           <NewsArticle key={index} article={article} />

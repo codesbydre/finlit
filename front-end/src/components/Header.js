@@ -47,42 +47,10 @@ function Header() {
                     Home
                   </Link>
                 </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
+                <li className="nav-item">
+                  <Link className="nav-link" to="/news">
                     News
-                  </a>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="navbarDropdownMenuLink"
-                  >
-                    <li>
-                      <Link className="dropdown-item" to="/news">
-                        <strong>All News</strong>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="/news/business">
-                        Business
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="/news/technology">
-                        Technology
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="/news/general">
-                        General
-                      </Link>
-                    </li>
-                  </ul>
+                  </Link>
                 </li>
                 {isAuthenticated && (
                   <li className="nav-item">
