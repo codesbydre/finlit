@@ -19,7 +19,17 @@ function HomePage() {
           Explore current news, take quizzes, and improve your financial
           knowledge!
         </p>
-        {!isAuthenticated && (
+        {isAuthenticated ? (
+          <p>
+            <Link to="/news" className="btn btn-primary btn-lg mr-2">
+              Explore News
+            </Link>
+            &nbsp;
+            <Link to="/quizzes" className="btn btn-secondary btn-lg">
+              Take Quiz
+            </Link>
+          </p>
+        ) : (
           <p>
             <Link to="/login" className="btn btn-primary btn-lg mr-2">
               Login
