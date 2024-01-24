@@ -31,36 +31,41 @@ function Login() {
 
   return (
     <div className="container mt-4">
-      {error && <div className="alert alert-danger">{error}</div>}
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            className="form-control"
-            id="username"
-            name="username"
-            value={credentials.username}
-            onChange={handleChange}
-            placeholder="Username"
-          />
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <h1>Login</h1>
+          {error && <div className="alert alert-danger">{error}</div>}
+          <form onSubmit={handleSubmit}>
+            <div className="form-group pb-2">
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                className="form-control"
+                id="username"
+                name="username"
+                value={credentials.username}
+                onChange={handleChange}
+                placeholder="Username"
+              />
+            </div>
+            <div className="form-group pb-2">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                name="password"
+                value={credentials.password}
+                onChange={handleChange}
+                placeholder="Password"
+              />
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Login
+            </button>
+          </form>
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            name="password"
-            value={credentials.password}
-            onChange={handleChange}
-            placeholder="Password"
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Login
-        </button>
-      </form>
+      </div>
     </div>
   );
 }

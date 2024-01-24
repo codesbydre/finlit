@@ -30,77 +30,83 @@ function Register() {
 
   return (
     <div className="container mt-4">
-      {error && <div className="alert alert-danger">{error}</div>}
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            className="form-control"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            placeholder="Username"
-            required
-          />
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <h1>Register</h1>
+          {error && <div className="alert alert-danger">{error}</div>}
+          <form onSubmit={handleSubmit}>
+            <div className="form-group pb-2">
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                className="form-control"
+                id="username"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                placeholder="Username"
+                required
+              />
+            </div>
+            <div className="form-group pb-2">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="Password"
+                required
+              />
+            </div>
+            <div className="form-group pb-2">
+              <label htmlFor="first_name">First Name</label>
+              <input
+                type="text"
+                className="form-control"
+                id="first_name"
+                name="first_name"
+                value={formData.first_name}
+                onChange={handleChange}
+                placeholder="First Name"
+                required
+              />
+            </div>
+            <div className="form-group pb-2">
+              <label htmlFor="last_name">Last Name</label>
+              <input
+                type="text"
+                className="form-control"
+                id="last_name"
+                name="last_name"
+                value={formData.last_name}
+                onChange={handleChange}
+                placeholder="Last Name"
+                required
+              />
+            </div>
+            <div className="form-group pb-2">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <button type="submit" className="btn btn-primary">
+              Register
+            </button>
+          </form>
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            placeholder="Password"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="first_name">First Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="first_name"
-            name="first_name"
-            value={formData.first_name}
-            onChange={handleChange}
-            placeholder="First Name"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="last_name">Last Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="last_name"
-            name="last_name"
-            value={formData.last_name}
-            onChange={handleChange}
-            placeholder="Last Name"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email"
-            required
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Register
-        </button>
-      </form>
+      </div>
     </div>
   );
 }

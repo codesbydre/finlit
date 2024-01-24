@@ -64,7 +64,7 @@ function Header() {
                   >
                     <li>
                       <Link className="dropdown-item" to="/news">
-                        All News
+                        <strong>All News</strong>
                       </Link>
                     </li>
                     <li>
