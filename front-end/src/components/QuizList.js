@@ -33,8 +33,8 @@ function QuizList() {
   };
 
   return (
-    <div>
-      <h2>Quizzes</h2>
+    <div className="container-lg mt-4">
+      <h2 className="mb-3">Quizzes</h2>
       <div className="row">
         {quizzes.map((quiz) => (
           <div key={quiz.id} className="col-sm-6 col-md-4 mb-3">
