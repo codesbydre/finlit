@@ -11,7 +11,10 @@ function QuizList() {
         const response = await axios.get("http://localhost:3001/api/quizzes", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
-        setQuizzes(response.data);
+        const sortedQuizzes = response.data.sort((a, b) =>
+          a.topic.localeCompare(b.topic)
+        );
+        setQuizzes(sortedQuizzes);
       } catch (error) {
         console.error("Error fetching quizzes:", error);
       }
@@ -20,18 +23,41 @@ function QuizList() {
     fetchQuizzes();
   }, []);
 
+  const getCardColor = (difficulty) => {
+    const difficultyColor = {
+      Easy: "success",
+      Medium: "warning",
+      Hard: "danger",
+    };
+    return difficultyColor[difficulty] || "secondary";
+  };
+
   return (
     <div>
       <h2>Quizzes</h2>
-      <ul>
+      <div className="row">
         {quizzes.map((quiz) => (
-          <li key={quiz.id}>
-            <Link to={`/quizzes/${quiz.id}`}>
-              {quiz.title} <small>[ Difficulty: {quiz.difficulty} ]</small>
-            </Link>
-          </li>
+          <div key={quiz.id} className="col-sm-6 col-md-4 mb-3">
+            <div className={`card border-${getCardColor(quiz.difficulty)}`}>
+              <div className="card-body">
+                <h5 className="card-title">{quiz.title}</h5>
+                <p className="card-text">
+                  <small>Topic: {quiz.topic}</small>
+                </p>
+                <p className="card-text">
+                  <small>Difficulty: {quiz.difficulty}</small>
+                </p>
+                <Link
+                  to={`/quizzes/${quiz.id}`}
+                  className={`btn btn-${getCardColor(quiz.difficulty)}`}
+                >
+                  Take Quiz
+                </Link>
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
