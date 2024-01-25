@@ -9,10 +9,15 @@ a:hover .card-img-top {
 .card-title a {
   color: black;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.card-title a:hover {
+  color: #555;
 }
 
 .card-text.description {
-  color: #666;
+  color: #020202;
 }
 
 .author {
