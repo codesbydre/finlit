@@ -1,9 +1,17 @@
 .card-img-top {
   transition: opacity 0.3s ease;
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
 }
 
 a:hover .card-img-top {
   opacity: 0.85;
+}
+
+.card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
 }
 
 .card-title a {
@@ -18,14 +26,18 @@ a:hover .card-img-top {
 
 .card-text.description {
   color: #020202;
+  font-size: 0.9rem;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
-.author {
-  font-size: smaller;
-}
-
-.card-text.date {
-  font-size: smaller;
+.author,
+.date {
+  font-size: 0.8rem;
   color: #666;
 }
 
