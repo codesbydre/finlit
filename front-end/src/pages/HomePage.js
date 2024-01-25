@@ -10,8 +10,8 @@ function HomePage() {
 
   return (
     <div className="container-lg mt-4">
-      <div className="p-5 mb-5 bg-light rounded-3 text-center">
-        <h1 className="display-4 mb-4">Welcome to FinLit</h1>
+      <div className="p-5 mb-5  rounded-3 text-center hero-section">
+        <h1 className="display-4 mb-4">Welcome to FinLit.</h1>
         <p className="lead mb-4">
           Explore current news, take quizzes, and improve your financial
           knowledge!
