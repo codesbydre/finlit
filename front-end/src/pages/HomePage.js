@@ -43,11 +43,11 @@ function HomePage() {
         )}
       </div>
       <div className="row">
-        <div className="col-md-2">
+        <div className="col-lg-2 col-md-3 col-sm-3">
           <CategoriesList />
           <CompaniesList />
         </div>
-        <div className="col-md-10">
+        <div className="col-lg-10 col-md-9 col-sm-9">
           <TopHeadlines category="business" />
         </div>
       </div>

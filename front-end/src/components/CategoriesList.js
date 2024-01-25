@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./Sidebar.css";
 
 const CategoriesList = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const CategoriesList = () => {
   };
 
   return (
-    <div className="list-group my-4">
+    <div className="list-group my-4 sidebar-section">
       <h4>Category</h4>
       {categories.map((category) => (
         <button
