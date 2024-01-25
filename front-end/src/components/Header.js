@@ -25,7 +25,7 @@ function Header() {
       )}
       <header>
         <nav className="navbar navbar-expand-lg navbar-light bg-white">
-          <div className="container-fluid">
+          <div className="container-lg">
             <Link className="navbar-brand" to="/">
               FinLit
             </Link>
