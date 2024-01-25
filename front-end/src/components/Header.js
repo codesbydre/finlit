@@ -16,6 +16,9 @@ function Header() {
     }, 1000);
   };
 
+  const setActiveClass = ({ isActive }) =>
+    isActive ? "nav-link active" : "nav-link";
+
   return (
     <>
       {alert && (
@@ -43,31 +46,18 @@ function Header() {
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item px-3">
-                  <NavLink
-                    className="nav-link"
-                    to="/"
-                    exact
-                    activeClassName="active"
-                  >
+                  <NavLink className={setActiveClass} to="/">
                     Home
                   </NavLink>
                 </li>
                 <li className="nav-item px-3">
-                  <NavLink
-                    className="nav-link"
-                    to="/news"
-                    activeClassName="active"
-                  >
+                  <NavLink className={setActiveClass} to="/news">
                     News
                   </NavLink>
                 </li>
                 {isAuthenticated && (
                   <li className="nav-item px-3">
-                    <NavLink
-                      className="nav-link"
-                      to="/quizzes"
-                      activeClassName="active"
-                    >
+                    <NavLink className={setActiveClass} to="/quizzes">
                       Quizzes
                     </NavLink>
                   </li>
@@ -85,20 +75,12 @@ function Header() {
                 ) : (
                   <>
                     <li className="nav-item px-3">
-                      <NavLink
-                        className="nav-link"
-                        to="/login"
-                        activeClassName="active"
-                      >
+                      <NavLink className={setActiveClass} to="/login">
                         Login
                       </NavLink>
                     </li>
                     <li className="nav-item px-3">
-                      <NavLink
-                        className="nav-link"
-                        to="/register"
-                        activeClassName="active"
-                      >
+                      <NavLink className={setActiveClass} to="/register">
                         Register
                       </NavLink>
                     </li>
