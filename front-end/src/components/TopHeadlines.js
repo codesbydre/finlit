@@ -28,12 +28,12 @@ function TopHeadlines({ category = "" }) {
 
   return (
     <div className="container my-4">
-      <h2>
+      <h4>
         {category
           ? `${category.charAt(0).toUpperCase() + category.slice(1)} `
           : ""}
         Top Headlines
-      </h2>
+      </h4>
       <div className="row">
         {articles.length > 0 ? (
           articles.map((article, index) => (

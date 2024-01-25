@@ -12,8 +12,8 @@ function Header() {
     setAlert(true);
     setTimeout(() => {
       setAlert(false);
-      navigate("/");
-    }, 3000);
+      navigate("/login");
+    }, 1000);
   };
 
   return (
