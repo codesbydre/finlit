@@ -61,32 +61,41 @@ function QuizPage() {
   };
 
   return (
-    <div>
-      <h2>Quiz Questions</h2>
+    <div className="container-lg mt-4">
+      <h2 className="mb-4">Quiz Questions</h2>
       <form onSubmit={handleSubmit}>
-        {questions.map((question) => (
-          <div key={question.id}>
-            <p>
-              <strong>{question.question}</strong>
-            </p>
-            {["A", "B", "C", "D"].map((option) => (
-              <div key={option}>
-                <input
-                  type="radio"
-                  id={`question-${question.id}-option-${option}`}
-                  name={`question-${question.id}`}
-                  value={option}
-                  onChange={() => handleChange(question.id, option)}
-                  checked={answers[question.id] === option}
-                />
-                <label htmlFor={`question-${question.id}-option-${option}`}>
-                  {question[`option_${option.toLowerCase()}`]}
-                </label>
-              </div>
-            ))}
+        {questions.map((question, index) => (
+          <div key={question.id} className="card mb-3 col-lg-9">
+            <div className="card-header">Question {index + 1}</div>
+            <div className="card-body">
+              <h5 className="card-title">{question.question}</h5>
+              {["A", "B", "C", "D"].map((option) => (
+                <div key={option} className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    id={`question-${question.id}-option-${option}`}
+                    name={`question-${question.id}`}
+                    value={option}
+                    onChange={() => handleChange(question.id, option)}
+                    checked={answers[question.id] === option}
+                  />
+                  <label
+                    className="form-check-label"
+                    htmlFor={`question-${question.id}-option-${option}`}
+                  >
+                    {question[`option_${option.toLowerCase()}`]}
+                  </label>
+                </div>
+              ))}
+            </div>
           </div>
         ))}
-        <button type="submit">Submit Quiz</button>
+        <div className=" mt-4">
+          <button type="submit" className="btn btn-primary">
+            Submit Quiz
+          </button>
+        </div>
       </form>
     </div>
   );
