@@ -1,9 +1,10 @@
 import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Register from "./Register";
 import axios from "axios";
 import { MemoryRouter } from "react-router-dom";
+import { act } from "react-dom/test-utils";
 
 jest.mock("axios");
 jest.mock("react-router-dom", () => ({
@@ -21,10 +22,12 @@ describe("Register Component", () => {
     expect(screen.getByLabelText("Email")).toBeInTheDocument();
   });
 
-  it("updates input fields on user input", () => {
+  it("updates input fields on user input", async () => {
     render(<Register />, { wrapper: MemoryRouter });
     const usernameInput = screen.getByLabelText("Username");
-    userEvent.type(usernameInput, "testuser");
+    await act(async () => {
+      userEvent.type(usernameInput, "testuser");
+    });
     expect(usernameInput.value).toBe("testuser");
   });
 
@@ -40,7 +43,6 @@ describe("Register Component", () => {
     userEvent.click(screen.getByRole("button", { name: /register/i }));
 
     await waitFor(() => {
-      // Check if axios post was called with correct data
       expect(axios.post).toHaveBeenCalledWith(
         "http://localhost:3001/api/users/register",
         {
@@ -58,8 +60,11 @@ describe("Register Component", () => {
     axios.post.mockRejectedValue(new Error("Registration failed"));
 
     render(<Register />, { wrapper: MemoryRouter });
-    userEvent.type(screen.getByLabelText("Username"), "testuser");
-    userEvent.click(screen.getByRole("button", { name: /register/i }));
+
+    await act(async () => {
+      userEvent.type(screen.getByLabelText("Username"), "testuser");
+      userEvent.click(screen.getByRole("button", { name: /register/i }));
+    });
 
     await waitFor(() => {
       expect(
