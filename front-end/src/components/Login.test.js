@@ -1,8 +1,7 @@
 import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Login from "./Login";
-import axios from "axios";
 import { MemoryRouter } from "react-router-dom";
 import { act } from "react-dom/test-utils";
 
