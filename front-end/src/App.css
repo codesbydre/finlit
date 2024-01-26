@@ -7,8 +7,15 @@ body {
   font-size: 1.5rem;
 }
 
+.navbar-brand-logo {
+  margin-right: 5px;
+  width: 30px;
+  height: auto;
+}
+
 .hero-section {
   background-color: #e9f5f5;
+  /* background-color: #c1e0ef; */
 }
 
 h1,

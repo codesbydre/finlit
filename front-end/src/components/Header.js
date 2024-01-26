@@ -30,6 +30,11 @@ function Header() {
         <nav className="navbar navbar-expand-lg navbar-light bg-white">
           <div className="container-lg">
             <NavLink className="navbar-brand" to="/">
+              <img
+                className="navbar-brand-logo"
+                src="/finlitlogov2.png"
+                alt="FinLit Logo"
+              />
               FinLit
             </NavLink>
             <button
