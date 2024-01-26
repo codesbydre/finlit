@@ -3,11 +3,6 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import CategoriesList from "./CategoriesList";
 
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
-  useNavigate: () => jest.fn(),
-}));
-
 test("renders categories list", () => {
   render(<CategoriesList />, { wrapper: MemoryRouter });
   expect(screen.getByText("Category")).toBeInTheDocument();
