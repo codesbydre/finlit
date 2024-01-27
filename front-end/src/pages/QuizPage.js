@@ -63,7 +63,7 @@ function QuizPage() {
   return (
     <div className="container-lg mt-4">
       <h2 className="mb-4">Quiz Questions</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} data-testid="quiz-form">
         {questions.map((question, index) => (
           <div key={question.id} className="card mb-3 col-lg-9">
             <div className="card-header">Question {index + 1}</div>
