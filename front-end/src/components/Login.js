@@ -18,7 +18,7 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/users/login",
+        "https://finlit.onrender.com/api/users/login",
         credentials
       );
       localStorage.setItem("token", response.data.token);

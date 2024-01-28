@@ -11,7 +11,7 @@ function QuizResults() {
     const fetchResults = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/api/quizzes/${quizId}/attempt/${attemptId}`,
+          `https://finlit.onrender.com/api/quizzes/${quizId}/attempt/${attemptId}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,

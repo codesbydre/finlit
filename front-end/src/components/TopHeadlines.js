@@ -8,7 +8,9 @@ function TopHeadlines({ category = "" }) {
 
   useEffect(() => {
     console.log("Fetching news for category:", category);
-    const apiUrl = category ? `/api/news/category/${category}` : "/api/news";
+    const apiUrl = category
+      ? `https://finlit.onrender.com/api/news/category/${category}`
+      : "https://finlit.onrender.com/api/news";
     axios
       .get(apiUrl)
       .then((response) => {

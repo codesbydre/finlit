@@ -13,7 +13,7 @@ function CompanyNews() {
 
   useEffect(() => {
     axios
-      .get(`/api/news/search?q=${companyName}`)
+      .get(`https://finlit.onrender.com/api/news/search?q=${companyName}`)
       .then((response) => {
         setArticles(response.data);
       })

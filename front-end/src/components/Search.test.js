@@ -32,7 +32,9 @@ describe("Search Component", () => {
     userEvent.click(screen.getByRole("button"));
 
     await waitFor(() => {
-      expect(axios.get).toHaveBeenCalledWith(`/api/news/search?q=test query`);
+      expect(axios.get).toHaveBeenCalledWith(
+        `https://finlit.onrender.com/api/news/search?q=test query`
+      );
       expect(screen.getByText("Test Article")).toBeInTheDocument();
     });
   });

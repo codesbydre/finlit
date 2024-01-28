@@ -20,7 +20,10 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/api/users/register", formData);
+      await axios.post(
+        "https://finlit.onrender.com/api/users/register",
+        formData
+      );
       localStorage.setItem("username", formData.username); // Store username for greeting after redirect
       navigate("/"); // Redirect to homepage
     } catch (error) {

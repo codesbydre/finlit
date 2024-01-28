@@ -44,7 +44,7 @@ describe("Register Component", () => {
 
     await waitFor(() => {
       expect(axios.post).toHaveBeenCalledWith(
-        "http://localhost:3001/api/users/register",
+        "https://finlit.onrender.com/api/users/register",
         {
           username: "testuser",
           password: "testpass",

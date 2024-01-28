@@ -11,7 +11,9 @@ function Search() {
     e.preventDefault();
     setError(null);
     try {
-      const response = await axios.get(`/api/news/search?q=${query}`);
+      const response = await axios.get(
+        `https://finlit.onrender.com/api/news/search?q=${query}`
+      );
       setArticles(response.data);
     } catch (error) {
       console.error("Error fetching search results:", error);

@@ -9,9 +9,14 @@ function QuizList() {
   useEffect(() => {
     const fetchQuizzes = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/quizzes", {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        });
+        const response = await axios.get(
+          "https://finlit.onrender.com/api/quizzes",
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
         const sortedQuizzes = response.data.sort((a, b) =>
           a.topic.localeCompare(b.topic)
         );

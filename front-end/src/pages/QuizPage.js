@@ -12,7 +12,7 @@ function QuizPage() {
     const fetchQuestions = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/api/quizzes/${quizId}/questions`,
+          `https://finlit.onrender.com/api/quizzes/${quizId}/questions`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -43,7 +43,7 @@ function QuizPage() {
       );
 
       const response = await axios.post(
-        `http://localhost:3001/api/quizzes/${quizId}/attempt`,
+        `https://finlit.onrender.com/api/quizzes/${quizId}/attempt`,
         {
           username: localStorage.getItem("username"),
           responses,
