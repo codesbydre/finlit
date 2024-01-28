@@ -7,6 +7,7 @@
 ## Features
 
 **Current News:** Stay informed with the latest headlines, ensuring you never miss a beat in the fast-paced world of finance.
+
 **Interactive Quizzes:** Test and improve your financial knowledge through a variety of quizzes tailored to different expertise levels.
 
 ## User Flow
