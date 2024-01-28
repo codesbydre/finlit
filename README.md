@@ -50,8 +50,8 @@ Additionally, we've crafted a series of educational quizzes designed to challeng
 
 - **Homepage**
 
-![FinLit Homepage](https://ibb.co/hCkPJpw)
+![FinLit Homepage](https://i.ibb.co/vDb762R/homepage-finlit.png)
 
 - **Quizzes**
 
-![Quizzes page](https://ibb.co/3zLpDTg)
+![Quizzes page](https://i.ibb.co/k1W4RGN/quizzes-finlit.png)
