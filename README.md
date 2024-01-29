@@ -45,7 +45,7 @@ Additionally, we've crafted a series of educational quizzes designed to challeng
 - **Frontend:** React (Create React App), Bootstrap for styling
 - **Backend:** Node.js, Express.js, PostgreSQL with ElephantSQL for database hosting
 - **Testing:** Jest for unit tests, React Testing Library for component tests
-- **Deployment:** [Render](https://render.com/) for hosting both frontend and backend services
+- **Deployment:** [Render](https://render.com/) for hosting both frontend and backend services. Deployed application at [FinLit](https://finlit-react.onrender.com/).
 
 ## Screenshots
 
